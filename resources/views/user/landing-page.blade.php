@@ -1,0 +1,26 @@
+@extends('layouts.master-user')
+
+@section('content')
+    <h2>User</h2>
+    <br>
+    <h2>User</h2>
+    <br>
+    <h2>User</h2>
+    <br>
+    <h2>User</h2>
+    <br>
+    <h2>User</h2>
+    <br>
+    <h2>User</h2>
+    <br>
+    <h2>User</h2>
+    <br>
+    <h2>User</h2>
+    <br>
+    <h2>User</h2>
+    <br>
+    <h2>User</h2>
+    <br>
+    <h2>User</h2>
+    <br>
+@endsection
