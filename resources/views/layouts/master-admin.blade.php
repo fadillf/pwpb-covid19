@@ -9,14 +9,16 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>@yield('title')</title>
 
+  <title>PCI - PWPB Covid Indonesia @yield('title')</title>
+  <link rel="shortcut icon" href="{{ URL::asset('/logo.png') }}" sizes="100x100">
   <!-- Custom fonts for this template-->
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/sb-admin-2.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/fontawesome-free/css/all.min.css') }}">    
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/fontawesome-free/css/all.min.css') }}">  
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/datatables/dataTables.bootstrap4.css') }}">  
 
 </head>
 
@@ -36,12 +38,12 @@
                 <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->
-
+            <br><br>
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; PCI 2020</span>
+                    <span>Copyright &copy; 2019-2020 PCI - PWPB COVID INDONESIA. All Rights Reserved.</span>
                 </div>
                 </div>
             </footer>

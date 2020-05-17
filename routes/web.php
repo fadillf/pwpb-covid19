@@ -21,9 +21,31 @@ Route::get('/admin', function () {
     return view('admin/dashboard');
 });
 
+Route::get('/profile', function () {
+    return view('admin/profile');
+});
+
+Route::get('/tabelArtikel', function () {
+    return view('admin/tabelArtikel');
+});
+
+Route::get('/formArtikel', function () {
+    return view('admin/formArtikel');
+});
+
+Route::get('/loginn', function () {
+    return view('admin/login');
+});
+
+Route::get('/registerr', function () {
+    return view('admin/register');
+});
+
 Route::get('/user', function () {
     return view('user/landing-page');
 });
+
+
 
 Auth::routes();
 
