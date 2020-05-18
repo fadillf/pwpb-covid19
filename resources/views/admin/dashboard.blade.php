@@ -11,8 +11,8 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col-auto">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Kartu Prakerja</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">1000</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Artikel</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{$countArtikel}}</div>
                     </div>
                   </div>
                 </div>
@@ -24,8 +24,8 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Kartu Pintar</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">10000</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Kategori</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{$countKategori}}</div>
                     </div>
                   </div>
                 </div>
@@ -37,7 +37,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">BPJS</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Komentar</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">10000</div>
                     </div>
                   </div>

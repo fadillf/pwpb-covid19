@@ -17,22 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', function () {
-    return view('admin/dashboard');
-});
-
-Route::get('/profile', function () {
-    return view('admin/profile');
-});
-
-Route::get('/tabelArtikel', function () {
-    return view('admin/tabelArtikel');
-});
-
-Route::get('/formArtikel', function () {
-    return view('admin/formArtikel');
-});
-
 Route::get('/loginn', function () {
     return view('admin/login');
 });
@@ -51,3 +35,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/profile', 'HomeController@profile')->name('profile');
+
+Route::get('/kategori', 'KategoriController@index')->name('kategori');
+
+Route::get('/kategori/tambah', 'KategoriController@create')->name('kategori/tambah');
+Route::delete('/kategori/{id}', 'KategoriController@destroy');
+
+Route::get('/artikel', 'ArtikelController@index')->name('artikel');
+
+Route::get('/artikel/tambah', 'ArtikelController@create')->name('artikel/tambah');

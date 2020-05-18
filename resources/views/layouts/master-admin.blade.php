@@ -25,6 +25,11 @@
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
+        @guest
+
+        @if (Route::has('register'))
+        @endif
+        @else
         @include('admin.partials.sidebar')
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -32,6 +37,7 @@
             <div id="content">
             @include('admin.partials.navigation')
                 <!-- Begin Page Content -->
+                @endguest
                 <div class="container">            
                     @yield('content')
                 </div>

@@ -5,7 +5,7 @@
 @section('content')          	
 
     <div class="container-fluid">
-      <h2>Profile getNameAdmin</h2>
+      <h2>Profile {{ Auth::user()->name }}</h2>
     	<div class="row">
     		<div class="col-sm-12">
     			<div class="card">
@@ -14,15 +14,15 @@
     					<form>
     						<div class="form-grup">
     							<label>Name</label>
-    							<input type="text" name="" class="form-control" placeholder="Admin PCI">
+    							<input type="text" name="" class="form-control" placeholder="Admin PCI" value="{{ Auth::user()->name }}">
     						</div>
     						<div class="form-grup">
     							<label>Email</label>
-    							<input type="email" name="" class="form-control" placeholder="Admin@gmail.com">
+    							<input type="email" name="" class="form-control" placeholder="Admin@gmail.com" value="{{ Auth::user()->email }}">
     						</div>
     						<div class="form-grup">
     							<label>Password</label>
-    							<input type="password" name="" class="form-control" placeholder="********">
+    							<input type="password" name="" class="form-control" placeholder="********" value="{{ Auth::user()->password }}">
     						</div>
     						<div class="form-grup">
     							<label>Confirm Password</label>

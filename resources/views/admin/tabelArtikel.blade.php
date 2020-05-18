@@ -12,30 +12,42 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary"><a href="/formArtikel"><i class="fas fa-plus"></i> Tambah Artikel</a></h6>
+              <h6 class="m-0 font-weight-bold text-primary"><a href="{{ url('/artikel/tambah') }}"><i class="fas fa-plus"></i> Tambah Artikel</a></h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
+                      <th>No</th>
                       <th>Judul Artikel</th>
+                      <th>Kategori</th>
                       <th>Isi Artikel</th>
+                      <th>Gambar</th>
                       <th>Tanggal Upload</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Action</th>
+                      <th class="text-center"><i class="fas fa-cog"></i></th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td>2011/04/25</td>
-                      <td><a href="/formArtikel"><i class="fas fa-edit"></i></a>&emsp; | &emsp;<a href="" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-trash"></i></a></td>
-                    </tr>
+                    @foreach ($artikel as $row)
+                      <tr>
+                        <td>{{$loop->iteration}}</td>
+                        <td>{{$row->judul}}</td>
+                        <td>{{$row->kategori_id}}</td>
+                        <td>{{$row->isi}}</td>
+                        <td>{{$row->gambar}}</td>
+                        <td>{{$row->created_at}}</td>
+                        <td class="text-center form-inline p-2">
+                          <a href="{{ url('/kategori/' . $row->id . '/edit') }}" class="btn btn-warning btn-sm ml-auto"><i class="fas fa-edit"></i></a>&emsp;|&emsp;
+                          <form action="{{ url('/kategori', $row->id) }}" method="POST" class="mr-auto">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                          </form>
+                          <!-- <a href="" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-trash"></i></a> -->
+                        </td>
+                      </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>

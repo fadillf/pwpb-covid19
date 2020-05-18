@@ -3,28 +3,36 @@
 
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-  <div class="sidebar-brand-text mx-3">PCI Admin</div>
+  <div class="sidebar-brand-text mx-3">
+     PCI Admin
+  </div>
 </a>
 
 <!-- Divider -->
 <hr class="sidebar-divider my-0">
 
 <li class="nav-item @yield('dashboard')">
-    <a class="nav-link" href="/admin">
+    <a class="nav-link" href="{{ route('home') }}">
       <i class="fas fa-home"></i>
     <span>Dashboard</span></a>
 </li>
 
 <li class="nav-item @yield('profile')">
-    <a class="nav-link" href="/profile">
+    <a class="nav-link" href="{{ route('profile') }}">
       <i class="fas fa-user"></i>
     <span>Profile</span></a>
 </li>
 
 <li class="nav-item @yield('tabelArtikel')">
-    <a class="nav-link" href="tabelArtikel">
+    <a class="nav-link" href="{{ route('artikel') }}">
       <i class="fas fa-table"></i>
-    <span>Tabel Artikel</span></a>
+    <span>Artikel</span></a>
+</li>
+
+<li class="nav-item @yield('kategori')">
+    <a class="nav-link" href="{{ route('kategori') }}">
+      <i class="fas fa-table"></i>
+    <span>Kategori</span></a>
 </li>
 
 <!-- Divider -->
