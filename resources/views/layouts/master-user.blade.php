@@ -9,7 +9,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>@yield('title')</title>
+  <title>PCI - PWPB Covid Indoensia @yield('title')</title>
+  <link rel="shortcut icon" href="{{ URL::asset('/logo.png') }}" sizes="100x100">
 
   <!-- Custom fonts for this template-->
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -29,15 +30,15 @@
             <div id="content">
             @include('user.partials.navigation')
                 <!-- Begin Page Content -->
-                <div class="container">            
+                <div class="container-fluid">            
                     @yield('content')
                 </div>
                 <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->
-
+            <br><br>
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer bg-white shadow-sm">
                 <div class="container my-auto">
                 <div class="copyright text-center my-auto">
                     <span>Copyright &copy; PCI 2020</span>
