@@ -20,6 +20,8 @@
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/fontawesome-free/css/all.min.css') }}">  
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/datatables/dataTables.bootstrap4.css') }}">  
 
+  <script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -68,6 +70,7 @@
 
     <!-- Core plugin JavaScript-->
     <script type="text/javascript" src="{{ URL::asset('/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    
 
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="{{ URL::asset('/js/sb-admin-2.js') }}"></script>
@@ -86,6 +89,8 @@
     <!-- Page level custom scripts -->
     <script type="text/javascript" src="{{ URL::asset('/js/demo/datatables-demo.js') }}"></script>
 
-</body>
+    
+    
 
+</body>
 </html>

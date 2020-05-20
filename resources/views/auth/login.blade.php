@@ -1,73 +1,63 @@
-@extends('layouts.app')
+@extends('layouts.master-admin')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+@section('profile','active')
+@section('title')
+@section('content') 
+	<div class="container-fluid" style="width: 450px;">
+		<div class="row">
+			<div class="col"><br><br>
+				<div class="card mt-5 shadow">
+    				<div class="card-body">
+    					<form method="POST" action="{{ route('login') }}">
+							@csrf
+    						<p class="text-center mb-4"><img src="{{ URL::asset('/logo.png') }}" width="100" height="100"></p>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+    						<div class="input-group mb-4">
+							    <div class="input-group-prepend">
+							      <div class="input-group-text" id="btnGroupAddon"><i class="fas fa-user"></i></div>
+							    </div>
+							    <input name="email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" aria-label="Input group example" aria-describedby="btnGroupAddon" value="{{ old('email') }}" required autocomplete="email" autofocus>
+								@error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>Email atau password salah!</strong>
+                                    </span>
+                                @enderror
+							</div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
+    						<div class="input-group">
+							    <div class="input-group-prepend">
+							      <div class="input-group-text" id="btnGroupAddon"><i class="fas fa-lock"></i></div>
+							    </div>
+							    <input name="password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" aria-label="Input group example" aria-describedby="btnGroupAddon" required autocomplete="current-password">
+								@error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
-                        </div>
+							</div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+							<div class="form-check mb-4 mt-2">
+							  <input class="form-check-input" value="" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+							  <label class="form-check-label" for="defaultCheck1" >
+								{{ __('Remember Me') }}
+							  </label>
+							</div>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+							<div class="text-center mt-4">
+								<button type="submit" class="btn btn-danger w-100">
+									{{ __('Login') }}
+								</button>
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+								@if (Route::has('password.request'))
+									<a class="btn btn-link mt-3" href="{{ route('password.request') }}">
+										{{ __('Forgot Your Password?') }}
+									</a>
+								@endif
+							</div>
+    					</form>
+	    			</div>
+				</div>
+			</div>
+		</div>
+	</div>
 @endsection
