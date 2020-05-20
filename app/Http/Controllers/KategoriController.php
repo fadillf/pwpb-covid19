@@ -46,21 +46,23 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         $rule = [
-            'id' => 'required|numeric',
-            'nama_lengkap' => 'required|string',
-            'jenkel' => 'required',
-            'goldar' => 'required'
+            'nama_kategori' => 'required|string',
+            'slug' => 'required|string'
         ];
+
         $this->validate($request, $rule);
 
         $input = $request -> all();
+        $input['created_at'] = Carbon::now();
+        $input['updated_at'] = Carbon::now();
+
         unset($input['_token']);
-        $status = \DB::table('t_siswa')->insert($input);
+        $status = DB::table('table_kategori')->insert($input);
 
         if($status){
-            return redirect('/siswa')->with('sukses', 'Data berhasil ditambahkan');
+            return redirect('/kategori')->with('success', 'Data berhasil ditambahkan');
         }else{
-            return redirect('/siswa/create')->with('error', 'Data gagal ditambahkan');
+            return redirect('/kategori/tambah')->with('error', 'Data gagal ditambahkan');
         }
     }
 
@@ -83,7 +85,8 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['kategori'] = DB::table('table_kategori')->find($id);
+        return view('admin.formKategori', $data);
     }
 
     /**
@@ -93,9 +96,27 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $req, $id)
     {
-        //
+        $rule = [
+            'nama_kategori' => 'required|string',
+            'slug' => 'required|string'
+        ];
+        $this->validate($req, $rule);
+
+        $input = $req -> all();
+        $input['updated_at'] = Carbon::now();
+        
+        unset($input['_token']);
+        unset($input['_method']);
+
+        $status = DB::table('table_kategori')->where('id', $id)->update($input);
+
+        if($status){
+            return redirect('/kategori')->with('success', 'Data berhasil diperbaharui');
+        }else{
+            return redirect('/kategori/tambah')->with('error', 'Data gagal diperbaharui');
+        }
     }
 
     /**
@@ -106,7 +127,7 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        $status = \DB::table('table_kategori')->where('id', $id)->delete();
+        $status = DB::table('table_kategori')->where('id', $id)->delete();
         if($status){
             return redirect('/kategori')->with('success', 'Data berhasil dihapus');
         }else{
