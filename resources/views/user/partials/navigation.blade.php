@@ -15,13 +15,13 @@
               <a class="nav-link text-danger font-weight-bold mr-4" href="#">Terkini</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-danger font-weight-bold mr-4" href="#">Rumah Sakit</a>
+              <a class="nav-link text-danger font-weight-bold mr-4" href="/rumahsakit">Rumah Sakit</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-danger font-weight-bold mr-4" href="#">Artikel</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-danger font-weight-bold" href="#">Contact Us</a>
+              <a class="nav-link text-danger font-weight-bold" href="/contact-us">Contact Us</a>
             </li>
         </div>
     </div>

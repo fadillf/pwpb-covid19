@@ -29,7 +29,12 @@ Route::get('/user', function () {
     return view('user/landing-page');
 });
 
-
+Route::get('/rumahsakit', function () {
+    return view('user/rumahsakit');
+});
+Route::get('/contact-us', function () {
+    return view('user/contact-us');
+});
 
 Auth::routes();
 

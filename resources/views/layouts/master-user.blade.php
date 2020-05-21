@@ -16,6 +16,7 @@
 
   <!-- Custom styles for this template-->
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/sb-admin-2.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/csstable.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/fontawesome-free/css/all.min.css') }}">    
 
 </head>
