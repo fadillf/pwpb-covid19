@@ -24,6 +24,7 @@
 </li>
 
 <li class="nav-item @yield('tabelArtikel')">
+<li class="nav-item @yield('artikel')">
     <a class="nav-link" href="{{ route('artikel') }}">
       <i class="fas fa-table"></i>
     <span>Artikel</span></a>
