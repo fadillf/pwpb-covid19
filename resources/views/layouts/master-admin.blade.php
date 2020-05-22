@@ -20,7 +20,7 @@
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/fontawesome-free/css/all.min.css') }}">  
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/datatables/dataTables.bootstrap4.css') }}">  
 
-  <script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
+  <script type="text/javascript" src="{{ URL::asset('/js/ckeditor.js') }}"></script>
 
 </head>
 
@@ -40,7 +40,7 @@
             @include('admin.partials.navigation')
                 <!-- Begin Page Content -->
                 @endguest
-                <div class="container">            
+                <div>            
                     @yield('content')
                 </div>
                 <!-- /.container-fluid -->
@@ -50,9 +50,9 @@
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; 2019-2020 PCI - PWPB COVID INDONESIA. All Rights Reserved.</span>
-                </div>
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2019-2020 PCI - PWPB COVID INDONESIA. All Rights Reserved.</span>
+                    </div>
                 </div>
             </footer>
             <!-- End of Footer -->
