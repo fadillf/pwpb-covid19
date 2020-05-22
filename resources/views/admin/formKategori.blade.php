@@ -49,7 +49,7 @@
 			$btn = "Tambah"
         @endphp
     @endif
-	<div class="container-fluid">
+	<div class="container">
 		<h2>{{ $title }} Kategori</h2>
 		<div class="row">
 			<div class="col">
@@ -66,16 +66,12 @@
     							<input type="text" name="nama_kategori" class="form-control" placeholder="Nama Kategori" value="{{ old('nama_kategori', @$kategori->nama_kategori) }}">
     						</div>
 
-							<div class="form-grup">
-    							<label>Slug</label>
-    							<input type="text" name="slug" class="form-control" placeholder="Slug" value="{{ old('slug', @$kategori->slug) }}">
-    						</div>
-
 		    				<div class="float-right mt-4">
 		    					<input type="submit" name="" class="btn btn-success mr-3" style="width:120px;" value="{{$btn}}">
 		    					<a href="{{ route('kategori') }}" class="btn btn-danger" style="width:120px;">Cancel</a>
 		    				</div>
     					</form>
+					</div>
     			</div>
 			</div>
 		</div>

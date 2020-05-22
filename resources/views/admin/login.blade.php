@@ -44,7 +44,7 @@
 							</div>
 
 							<div class="text-center">
-								<button type="submit" class="btn btn-success w-100">
+								<button type="submit" class="btn btn-danger w-100">
 									{{ __('Login') }}
 								</button>
 

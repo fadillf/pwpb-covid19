@@ -18,6 +18,7 @@
 
   <!-- Custom styles for this template-->
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/sb-admin-2.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/csstable.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/fontawesome-free/css/all.min.css') }}">    
   <style type="text/css">
     body{
@@ -57,7 +58,15 @@
 
     </div>
     <!-- End of Page Wrapper -->
-
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; PCI 2020</span>
+        </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
 
     <!-- Bootstrap core JavaScript-->
     <script type="text/javascript" src="{{ URL::asset('/vendor/jquery/jquery.min.js') }}"></script>

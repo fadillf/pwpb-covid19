@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Artikel;
+use App\Kategori;
 
 class ArtikelController extends Controller
 {
@@ -25,8 +27,8 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $data['artikel'] = DB::table('table_artikel')->get();
-        return view('admin/tabelArtikel', $data);
+        $artikel = Artikel::orderByDesc('created_at')->get();
+        return view('admin/tabelArtikel', compact('artikel'));
     }
     /**
      * Show the form for creating a new resource.
@@ -35,7 +37,8 @@ class ArtikelController extends Controller
      */
     public function create()
     {
-        return view('admin.formArtikel');
+        $kategori = Kategori::select('id', 'nama_kategori')->get();
+        return view('admin.formArtikel', compact('kategori'));
     }
 
     /**
@@ -54,9 +57,18 @@ class ArtikelController extends Controller
         
         $this->validate($request, $rule);
         $input = $request -> all();
+        $input['slug'] = \Str::slug($request->judul);
+        
         $input['created_at'] = Carbon::now();
         $input['updated_at'] = Carbon::now();
+        
+        
+        $imageName = $request->gambar->getClientOriginalName();  
+        $input['gambar'] = $imageName;
+        $request->gambar->move(public_path('uploads/artikel'), $imageName);
+
         unset($input['_token']);
+        
         $status = DB::table('table_artikel')->insert($input);
 
         if($status){
@@ -75,8 +87,9 @@ class ArtikelController extends Controller
      */
     public function edit($id)
     {
-        $data['artikel'] = DB::table('table_artikel')->find($id);
-        return view('admin.formArtikel', $data);
+        $artikel = Artikel::find($id);
+        $kategori = Kategori::all();
+        return view('admin.formArtikel', compact('artikel'), compact('kategori'));
     }
 
     /**
@@ -96,7 +109,15 @@ class ArtikelController extends Controller
         $this->validate($req, $rule);
 
         $input = $req -> all();
+        $input['slug'] = \Str::slug($req->judul);
         $input['updated_at'] = Carbon::now();
+        
+        if(!empty($input['gambar'])){
+            $imageName = $req->gambar->getClientOriginalName();  
+            $input['gambar'] = $imageName;
+            $req->gambar->move(public_path('uploads/artikel'), $imageName);
+        }
+
         unset($input['_token']);
         unset($input['_method']);
         
