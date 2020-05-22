@@ -9,20 +9,29 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>@yield('title')</title>
 
+  <title>PCI - PWPB Covid Indonesia @yield('title')</title>
+  <link rel="shortcut icon" href="{{ URL::asset('/logo.png') }}" sizes="100x100">
   <!-- Custom fonts for this template-->
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/sb-admin-2.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/fontawesome-free/css/all.min.css') }}">    
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/fontawesome-free/css/all.min.css') }}">  
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/datatables/dataTables.bootstrap4.css') }}">  
+
+  <script type="text/javascript" src="{{ URL::asset('/js/ckeditor.js') }}"></script>
 
 </head>
 
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
+        @guest
+
+        @if (Route::has('register'))
+        @endif
+        @else
         @include('admin.partials.sidebar')
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -30,19 +39,20 @@
             <div id="content">
             @include('admin.partials.navigation')
                 <!-- Begin Page Content -->
-                <div class="container">            
+                @endguest
+                <div>            
                     @yield('content')
                 </div>
                 <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->
-
+            <br><br>
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; PCI 2020</span>
-                </div>
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; 2019-2020 PCI - PWPB COVID INDONESIA. All Rights Reserved.</span>
+                    </div>
                 </div>
             </footer>
             <!-- End of Footer -->
@@ -60,6 +70,7 @@
 
     <!-- Core plugin JavaScript-->
     <script type="text/javascript" src="{{ URL::asset('/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    
 
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="{{ URL::asset('/js/sb-admin-2.js') }}"></script>
@@ -78,6 +89,8 @@
     <!-- Page level custom scripts -->
     <script type="text/javascript" src="{{ URL::asset('/js/demo/datatables-demo.js') }}"></script>
 
-</body>
+    
+    
 
+</body>
 </html>
