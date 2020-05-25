@@ -25,8 +25,8 @@
               <h6 class="m-0 font-weight-bold text-primary"><a href="{{ route('kategori/tambah') }}"><i class="fas fa-plus"></i> Tambah Kategori</a></h6>
             </div>
             <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <div class="table-responsive ">
+                <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
                       <th width="7%">No</th>

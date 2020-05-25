@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+use App\Kategori;
 
 class KategoriController extends Controller
 {
@@ -24,8 +26,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        $data['kategori'] = DB::table('table_kategori')->get();
-        return view('admin/tabelKategori', $data);
+        $kategori = Kategori::orderByDesc('created_at')->get();
+        return view('admin/tabelKategori', compact('kategori'));
     }
     /**
      * Show the form for creating a new resource.
@@ -46,13 +48,13 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         $rule = [
-            'nama_kategori' => 'required|string',
-            'slug' => 'required|string'
+            'nama_kategori' => 'required|string'
         ];
 
         $this->validate($request, $rule);
 
         $input = $request -> all();
+        $input['slug'] = \Str::slug($request->nama_kategori);
         $input['created_at'] = Carbon::now();
         $input['updated_at'] = Carbon::now();
 
@@ -66,16 +68,6 @@ class KategoriController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -85,8 +77,8 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        $data['kategori'] = DB::table('table_kategori')->find($id);
-        return view('admin.formKategori', $data);
+        $kategori = Kategori::find($id);
+        return view('admin.formKategori', compact('kategori'));
     }
 
     /**
@@ -105,6 +97,7 @@ class KategoriController extends Controller
         $this->validate($req, $rule);
 
         $input = $req -> all();
+        $input['slug'] = \Str::slug($request->nama_kategori);
         $input['updated_at'] = Carbon::now();
         
         unset($input['_token']);

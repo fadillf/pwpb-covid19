@@ -44,7 +44,7 @@
                       <tr style="font-size:14px;">
                         <td>{{$loop->iteration}}</td>
                         <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;" data-toggle="tooltip" data-placement="bottom" title="{{$row->judul}}">{{$row->judul}}</td>
-                        <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;" data-toggle="tooltip" data-placement="bottom" title="{{$row->kategori_id}}">{{$row->kategori_id}}</td>
+                        <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;" data-toggle="tooltip" data-placement="bottom" title="{{$row->kategori_id}}">{{$row->Kategori->nama_kategori}}</td>
                         <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;" data-toggle="tooltip" data-placement="bottom" title="{{$row->isi}}">{{$row->isi}}</td>
                         <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;" data-toggle="tooltip" data-placement="bottom" title="{{$row->gambar}}">{{$row->gambar}}</td>
                         <!-- @php
