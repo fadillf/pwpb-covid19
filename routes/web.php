@@ -29,6 +29,11 @@ Route::get('/user', function () {
     return view('user/landing-page');
 });
 
+Route::get('/formrs', function () {
+    return view('admin/formRs');
+});
+
+
 
 
 Auth::routes();
