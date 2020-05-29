@@ -13,4 +13,8 @@ class Artikel extends Model
         return $this->belongsTo(\App\Kategori::class, 'kategori_id', 'id');
         
     }
+
+    public function getRouteKeyName(){
+        return 'slug';
+    }
 }

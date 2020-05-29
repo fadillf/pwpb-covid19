@@ -22,6 +22,7 @@
 
   <script type="text/javascript" src="{{ URL::asset('/js/ckeditor.js') }}"></script>
 
+
 </head>
 
 <body id="page-top">
@@ -48,7 +49,7 @@
             <!-- End of Main Content -->
             <br><br>
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <footer class="sticky-footer bg-white shadow-sm">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; 2019-2020 PCI - PWPB COVID INDONESIA. All Rights Reserved.</span>

@@ -2,31 +2,40 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| USER
-|--------------------------------------------------------------------------
+/* 
+|==================================
+|              USER
+|==================================
 */
 Route::get('/', function () {
     return view('user/landing-page');
-});
+})->name('/');
 
 Route::get('/rumahsakit', function () {
     return view('user/rumahsakit');
-});
+})->name('rumahsakit');
+
 Route::get('/contact-us', function () {
     return view('user/contact-us');
-});
+})->name('contact');
+
+Route::get('/terkini','InfoController@index')->name('terkini');
 
 
-//=============================================
-//====              ADMIN                 =====
-//=============================================
+Route::get('/informasi/home','InformasiController@index')->name('informasi');
+Route::get('/informasi/{artikel}','InformasiController@show')->name('informasi.detail');
+Route::get('/informasi/kategori/{slug}','InformasiController@kategori')->name('informasi.kategori');
+
+
+/* 
+|==================================
+|              ADMIN
+|==================================
+*/
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile', 'ProfileController@edit')->name('profile');
     Route::patch('/profile/update', 'ProfileController@update')->name('profile.update');
@@ -46,3 +55,4 @@ Route::post('/artikel','ArtikelController@store');
 Route::get('/artikel/{id}/edit', 'ArtikelController@edit');
 Route::patch('/artikel/{id}', 'ArtikelController@update');
 Route::delete('/artikel/{id}', 'ArtikelController@destroy');
+

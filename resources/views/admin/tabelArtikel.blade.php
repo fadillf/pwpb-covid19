@@ -1,5 +1,6 @@
 @extends('layouts.master-admin')
 
+@section('tabelArtikel','active')
 @section('artikel','active')
 @section('title')
 @section('content') 
@@ -68,7 +69,7 @@
             </div>
           </div>
 
-        </div>		
+    </div>		
 
 		<!-- Modal Delete-->
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

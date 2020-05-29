@@ -9,7 +9,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>PCI - PWPB Covid Indoensia @yield('title')</title>
+  <title>PCI - PWPB Covid Indoensia</title>
+  <link rel="shortcut icon" href="{{ URL::asset('/logo.png') }}" sizes="100x100">
+
 
   <!-- Custom fonts for this template-->
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -18,9 +20,14 @@
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/sb-admin-2.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/csstable.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/fontawesome-free/css/all.min.css') }}">    
-
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/datatables/dataTables.bootstrap4.css') }}">  
+  <style type="text/css">
+    body{
+      color: black;
+    }
+  </style>
 </head>
-
+  
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -30,28 +37,27 @@
             <div id="content">
             @include('user.partials.navigation')
                 <!-- Begin Page Content -->
-                <div class="container">            
+                <div class="container-fluid">            
                     @yield('content')
                 </div>
                 <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->
-
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white shadow-sm">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; PCI 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-            <span>Copyright &copy; PCI 2020</span>
-        </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
 
     <!-- Bootstrap core JavaScript-->
     <script type="text/javascript" src="{{ URL::asset('/vendor/jquery/jquery.min.js') }}"></script>
