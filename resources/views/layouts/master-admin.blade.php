@@ -22,6 +22,7 @@
 
   <script type="text/javascript" src="{{ URL::asset('/js/ckeditor.js') }}"></script>
 
+
 </head>
 
 <body id="page-top">

@@ -1,14 +1,8 @@
 @extends('layouts.master-admin')
-
 @section('kategori','active')
 @section('title')
 @section('content') 
 
-@if(session('error'))
-        <div class="alert alert-error">
-            {{ session('error') }}
-        </div>
-    @endif
     @if(count($errors) > 0)
         <div class="alert alert-danger">
             <strong>Perhatian</strong><br>
