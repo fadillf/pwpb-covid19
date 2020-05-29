@@ -24,7 +24,6 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary"><a href="{{ url('/artikel/tambah') }}"><i class="fas fa-plus"></i> Tambah Artikel</a></h6>
               <h6 class="m-0 font-weight-bold text-primary"><a href="{{ route('artikel/tambah') }}"><i class="fas fa-plus"></i> Tambah Artikel</a></h6>
             </div>
             <div class="card-body">
@@ -32,13 +31,6 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>No</th>
-                      <th>Judul Artikel</th>
-                      <th>Kategori</th>
-                      <th>Isi Artikel</th>
-                      <th>Gambar</th>
-                      <th>Tanggal Upload</th>
-                      <th class="text-center"><i class="fas fa-cog"></i></th>
                       <th width="5%">No</th>
                       <th width="18%">Judul Artikel</th>
                       <th width="12%">Kategori</th>
@@ -50,16 +42,6 @@
                   </thead>
                   <tbody>
                     @foreach ($artikel as $row)
-                      <tr>
-                        <td>{{$loop->iteration}}</td>
-                        <td>{{$row->judul}}</td>
-                        <td>{{$row->kategori_id}}</td>
-                        <td>{{$row->isi}}</td>
-                        <td>{{$row->gambar}}</td>
-                        <td>{{$row->created_at}}</td>
-                        <td class="text-center form-inline p-2">
-                          <a href="{{ url('/kategori/' . $row->id . '/edit') }}" class="btn btn-warning btn-sm ml-auto"><i class="fas fa-edit"></i></a>&emsp;|&emsp;
-                          <form action="{{ url('/kategori', $row->id) }}" method="POST" class="mr-auto">
                       <tr style="font-size:14px;">
                         <td>{{$loop->iteration}}</td>
                         <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;" data-toggle="tooltip" data-placement="bottom" title="{{$row->judul}}">{{$row->judul}}</td>
@@ -87,7 +69,7 @@
             </div>
           </div>
 
-        </div>		
+    </div>		
 
 		<!-- Modal Delete-->
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
