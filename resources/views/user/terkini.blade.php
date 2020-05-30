@@ -51,7 +51,10 @@
 					</div>
 				</div>
 			</div>
-			<h6 class="text-dark mt-5" style="text-align: center;">Sumber data : Kementerian Kesehatan & JHU. Update terakhir : {{ $covid19['lastUpdate'] }} WIB</h6>
+			@php
+				$newDateFormat = \Carbon\Carbon::parse($covid19['lastUpdate'])->format('l, d F Y H:i:s');
+			@endphp
+			<h6 class="text-dark mt-5" style="text-align: center;">Sumber data : Kementerian Kesehatan & JHU. Update terakhir : {{ $newDateFormat }} WIB</h6>
 			<br><br><br><br><br>	
 			<div class="container">
 
