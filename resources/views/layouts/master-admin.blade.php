@@ -31,7 +31,10 @@
         @guest
 
         @if (Route::has('register'))
-        @endif
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+                <!-- Main Content -->
+                <div id="content">
         @else
         @include('admin.partials.sidebar')
         <!-- Content Wrapper -->
@@ -40,6 +43,7 @@
             <div id="content">
             @include('admin.partials.navigation')
                 <!-- Begin Page Content -->
+                @endif
                 @endguest
                 <div>            
                     @yield('content')
