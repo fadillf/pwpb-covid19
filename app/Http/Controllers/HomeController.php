@@ -26,7 +26,8 @@ class HomeController extends Controller
     {
         $countKategori = DB::table('table_kategori')->count();
         $countArtikel = DB::table('table_artikel')->count();
-        return view('admin/dashboard', compact('countKategori', 'countArtikel'));
+        $countRs = DB::table('table_rs')->count();
+        return view('admin/dashboard', compact('countKategori', 'countArtikel', 'countRs'));
     }
 
     public function profile()

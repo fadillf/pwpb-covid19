@@ -19,7 +19,7 @@
 							    <input name="email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" aria-label="Input group example" aria-describedby="btnGroupAddon" value="{{ old('email') }}" required autocomplete="email" autofocus>
 								@error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>Email atau password salah!</strong>
+                                        <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
 							</div>
