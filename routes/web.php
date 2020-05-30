@@ -11,15 +11,15 @@ Route::get('/', function () {
     return view('user/landing-page');
 })->name('/');
 
-Route::get('/rumahsakit', function () {
-    return view('user/rumahsakit');
-})->name('rumahsakit');
+Route::get('/rumahsakit','RsUserController@index')->name('rumahsakit');
 
 Route::get('/contact-us', function () {
     return view('user/contact-us');
 })->name('contact');
 
 Route::get('/terkini','InfoController@index')->name('terkini');
+
+
 
 
 Route::get('/informasi/home','InformasiController@index')->name('informasi');
@@ -56,3 +56,9 @@ Route::get('/artikel/{id}/edit', 'ArtikelController@edit');
 Route::patch('/artikel/{id}', 'ArtikelController@update');
 Route::delete('/artikel/{id}', 'ArtikelController@destroy');
 
+Route::get('/admin/rumahsakit', 'RsController@index')->name('admin.rumahsakit');
+Route::get('/admin/rumahsakit/tambah', 'RsController@create')->name('rumahsakit.tambah');
+Route::post('/admin/rumahsakit','RsController@store');
+Route::get('/admin/rumahsakit/{id}/edit', 'RsController@edit');
+Route::patch('/admin/rumahsakit/{id}', 'RsController@update');
+Route::delete('/admin/rumahsakit/{id}', 'RsController@destroy');

@@ -23,16 +23,21 @@
     <span>Profile</span></a>
 </li>
 
-<li class="nav-item @yield('tabelArtikel')">
+<li class="nav-item @yield('rs')">
+    <a class="nav-link" href="{{ route('admin.rumahsakit') }}">
+      <i class="fas fa-hospital"></i>
+    <span>Rumah Sakit</span></a>
+</li>
+
 <li class="nav-item @yield('artikel')">
     <a class="nav-link" href="{{ route('artikel') }}">
-      <i class="fas fa-table"></i>
+      <i class="fas fa-newspaper"></i>
     <span>Artikel</span></a>
 </li>
 
 <li class="nav-item @yield('kategori')">
     <a class="nav-link" href="{{ route('kategori') }}">
-      <i class="fas fa-table"></i>
+      <i class="fas fa-list"></i>
     <span>Kategori</span></a>
 </li>
 
