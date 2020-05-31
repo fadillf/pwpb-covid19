@@ -25,7 +25,7 @@ class InformasiController extends Controller
     {
         $artikelSlideBar = Artikel::latest()->get()->random(4);
         $kategoriID = DB::table('table_kategori')->select('id')->where('slug', $slug)->get();
-        $artikel = DB::table('table_artikel')->where('kategori_id', $kategoriID['0']->id)->get();
+        $artikel = Artikel::where('kategori_id', $kategoriID['0']->id)->get();
         $kategori = Kategori::withCount('Artikel')->get();
 
         return view('user/informasi', compact('artikelSlideBar','artikel', 'kategori', 'slug'));

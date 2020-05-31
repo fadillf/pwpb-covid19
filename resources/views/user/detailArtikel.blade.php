@@ -10,7 +10,7 @@
 				@endphp
 				<h6 class="mb-4">{{ $newDateFormat }}</h6>
 				<figure class="figure-img">
-				<img src="{{ asset('/uploads/artikel/' . $artikelDetail->gambar) }}" height="500px" width="100%" class="img-responsive" style="object-fit: cover;">
+				<img src="{{ asset('/uploads/artikel/' . $artikelDetail->gambar) }}" height="520px" width="100%" class="img-responsive" style="object-fit: cover;">
 				</figure><br>
 				
 				{!! $artikelDetail['isi'] !!}

@@ -17,10 +17,10 @@
 				  <div class="carousel-inner">
 				  @foreach($artikelSlideBar as $key => $info)
 				    <div class="carousel-item {{$key == 0 ? 'active' : '' }}">
-				      <img src="{{ URL::asset('/uploads/artikel/' . $info->gambar) }}" height="470" class="w-100" alt="Slider Image" style="object-fit: cover;">
+				      <img src="{{ URL::asset('/uploads/artikel/' . $info->gambar) }}" height="500" class="w-100" alt="Slider Image" style="object-fit: cover;">
 					  <div class="carousel-caption d-none d-md-block text-left">
 						<span class="badge badge-danger">{{$info->Kategori->nama_kategori}}</span><br>
-						<a href="" class="h1 text-decoration-none text-white" ><strong>{{$info->judul}}</strong></a>
+						<a href="{{ route('informasi.detail', $info->slug) }}" class="h1 text-decoration-none text-white" ><strong>{{$info->judul}}</strong></a>
 						<h4 class="text-truncate">{{ strip_tags($info->isi) }}</h4>
 					  </div>
 				    </div>
@@ -60,7 +60,7 @@
 							$newDateFormat = \Carbon\Carbon::parse($artkl->created_at)->format('l, d F Y');
 						@endphp
 						<h6 style="font-size: 14px;color: #C8200C;">{{$newDateFormat}} <span class="badge badge-success float-right">{{$artkl->Kategori->nama_kategori}}</span></h6>
-						<h4 class="card-title text-truncate font-weight-bold">{{ $artkl->judul }}</h4>
+						<h5 class="card-title text-truncate font-weight-bold">{{ $artkl->judul }}</h5>
 						<p class="card-text text-truncate" width="50px">{{ strip_tags($artkl->isi) }}</p>
 						<a href="{{ route('informasi.detail', $artkl->slug) }}" class="btn btn-sm btn-primary float-right"> Baca </a>
 						

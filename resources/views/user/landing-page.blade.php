@@ -28,8 +28,6 @@
       </div>    
       <div class="col-md-5">
         <img src="https://mdbootstrap.com/img/illustrations/graphics(4).png" class="img-fluid " alt="smaple image">
-
-            
       </div>
     </div>
 
@@ -77,6 +75,7 @@
       </div>
     </div>
 
-    <hr class="featurette-divider"
+    <hr class="featurette-divider">
+  </main>
     
 @endsection
