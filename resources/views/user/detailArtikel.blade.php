@@ -4,7 +4,7 @@
 	<div class="pl-4">
 		<div class="row mt-4">
 			<div class="col-sm-9 p-4 bg-white ">
-				<h1 class="text-bold">{{ $artikelDetail['judul'] }} asda</h1>
+				<h1 class="text-bold">{{ $artikelDetail['judul'] }}</h1>
 				@php
 					$newDateFormat = \Carbon\Carbon::parse($artikelDetail['created_at'])->format('l, d F Y H:i');
 				@endphp
