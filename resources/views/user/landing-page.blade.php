@@ -7,7 +7,7 @@
     <div class="jumbotron">
         <div class="container">
             <h1 class="display-3"><img src="img/1.png" width="90" height="100" class="d-block" alt=""></h1>
-            <p>(PWPWB Covid Indonesia) Web informatif tentang perkembangan virus covid indonesia dan beberapa daftar rumah sakit penanganan virus.
+            <p>(PWPB Covid Indonesia) Web informatif tentang perkembangan virus covid indonesia dan beberapa daftar rumah sakit penanganan virus.
             </p>
             {{-- <p><a class="btn btn-success btn-lg" href="#" role="button">Baca lebih lanjut..</a></p> --}}
         </div>
@@ -76,7 +76,7 @@
 
       </div>
     </div>
-
-    <hr class="featurette-divider"
-    
+  </div>
+</div>
+<br>    
 @endsection
