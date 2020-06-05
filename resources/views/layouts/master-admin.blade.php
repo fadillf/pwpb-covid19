@@ -53,7 +53,7 @@
             <div id="content-wrapper" class="d-flex flex-column">
                 <!-- Main Content -->
                 <div id="content">
-                  @endif
+        @endif
         @else
         @include('admin.partials.sidebar')
         <!-- Content Wrapper -->

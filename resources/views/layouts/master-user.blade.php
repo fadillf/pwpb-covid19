@@ -48,7 +48,7 @@
             <div id="content">
             @include('user.partials.navigation')
                 <!-- Begin Page Content -->
-                <div class="container-fluid">            
+                <div class="container-fluid mt-3">
                     @yield('content')
                 </div>
                 <!-- /.container-fluid -->

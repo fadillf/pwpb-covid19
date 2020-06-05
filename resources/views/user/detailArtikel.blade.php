@@ -4,13 +4,13 @@
 	<div class="pl-4">
 		<div class="row mt-4">
 			<div class="col-sm-9 p-4 bg-white ">
-				<h1 class="text-bold">{{ $artikelDetail['judul'] }} asda</h1>
+				<h1 class="text-bold">{{ $artikelDetail['judul'] }}</h1>
 				@php
 					$newDateFormat = \Carbon\Carbon::parse($artikelDetail['created_at'])->format('l, d F Y H:i');
 				@endphp
 				<h6 class="mb-4">{{ $newDateFormat }}</h6>
 				<figure class="figure-img">
-				<img src="{{ asset('/uploads/artikel/' . $artikelDetail->gambar) }}" height="500px" width="100%" class="img-responsive" style="object-fit: cover;">
+				<img src="{{ asset('/uploads/artikel/' . $artikelDetail->gambar) }}" height="520px" width="100%" class="img-responsive" style="object-fit: cover;">
 				</figure><br>
 				
 				{!! $artikelDetail['isi'] !!}

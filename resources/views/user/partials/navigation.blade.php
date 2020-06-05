@@ -1,5 +1,5 @@
 <!-- Topbar -->
-<nav class="navbar navbar-expand-lg navbar-light site-header sticky-top shadow-sm p-3 mb-3 bg-white h-400">
+<nav class="navbar navbar-expand-lg navbar-light site-header sticky-top shadow-sm p-3 bg-white h-400">
   <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="{{ URL::asset('/logo.png') }} " width="50"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
