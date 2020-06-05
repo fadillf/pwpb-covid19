@@ -20,12 +20,30 @@
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/fontawesome-free/css/all.min.css') }}">  
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/datatables/dataTables.bootstrap4.css') }}">  
 
-  <script type="text/javascript" src="{{ URL::asset('/js/ckeditor.js') }}"></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css'>
 
+
+  <script type="text/javascript" src="{{ URL::asset('/js/ckeditor.js') }}"></script>
+  <style type="text/css">
+    body{
+      color: black;
+    }
+    #load{
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      text-indent: 100%;
+      background: url('/loading.gif') no-repeat center;
+      z-index: 1;
+      background-size: 7%;
+    }
+  </style>
 
 </head>
 
 <body id="page-top">
+    <!-- Loader -->
+    <div id="load"></div>
     <!-- Page Wrapper -->
     <div id="wrapper">
         @guest
@@ -44,6 +62,7 @@
             <div id="content">
             @include('admin.partials.navigation')
                 <!-- Begin Page Content -->
+                
                 @endguest
                 <div>            
                     @yield('content')
@@ -66,6 +85,24 @@
         <!-- End of Content Wrapper -->
 
     </div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#load").fadeOut(1000);
+
+        $('loading').on('click',function(){
+          $("#loading").addClass('overlay');
+          $("#loading").html('<i class="fas fa-spinner fa-spin"></i>');
+          setTimeOut(RemoveClass,100);
+        });
+
+        function RemoveClass(){
+          $("#loading").RemoveClass('overlay');
+          $("#loading").fadeOut();
+        }
+      });
+  </script>
     <!-- End of Page Wrapper -->
 
 

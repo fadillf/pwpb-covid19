@@ -13,9 +13,8 @@ Route::get('/', function () {
 
 Route::get('/rumahsakit','RsUserController@index')->name('rumahsakit');
 
-Route::get('/contact-us', function () {
-    return view('user/contact-us');
-})->name('contact');
+Route::get('/contact-us', 'ContactController@index')->name('contact');
+Route::post('/contact-us', 'ContactController@sendMail');
 
 Route::get('/terkini','InfoController@index')->name('terkini');
 

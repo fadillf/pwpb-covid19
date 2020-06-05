@@ -25,10 +25,21 @@
     body{
       color: black;
     }
+      #load{
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      text-indent: 100%;
+      background: url('/loading.gif') no-repeat center;
+      z-index: 1;
+      background-size: 7%;
+    }
   </style>
 </head>
   
 <body id="page-top">
+    <!-- Loader -->
+    <div id="load"></div>
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Content Wrapper -->
@@ -57,6 +68,15 @@
         <!-- End of Content Wrapper -->
 
     </div>
+
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js'></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#load").fadeOut(2000);
+      });
+  </script>
     <!-- End of Page Wrapper -->
 
     <!-- Bootstrap core JavaScript-->

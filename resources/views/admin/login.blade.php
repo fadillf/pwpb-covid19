@@ -44,7 +44,7 @@
 							</div>
 
 							<div class="text-center">
-								<button type="submit" class="btn btn-danger w-100">
+								<button type="submit" class="btn btn-danger w-100" onclick="loading()" id="loading">
 									{{ __('Login') }}
 								</button>
 
@@ -59,5 +59,8 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="loading">
+		
 	</div>
 @endsection
